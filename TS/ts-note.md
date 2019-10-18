@@ -1,5 +1,13 @@
 # ts
 
+## main.ts  
+
+在main.ts中使用window  
+
+```js
+declare var window: any
+```
+
 ## 声明数组
 
 - **let arr:Array<any> =new Array<any>();**
@@ -36,9 +44,10 @@ let c: Color = Color.Green;
 
 ## 踩坑纪录
 
-```js
 ts 监听路由
 须在main.ts声明路由钩子函数
+
+```js
 Component.registerHooks([
     'beforeRouteEnter',//进入路由之前
     'beforeRouteLeave',//离开路由之前

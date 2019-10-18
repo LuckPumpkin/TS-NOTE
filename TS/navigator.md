@@ -13,6 +13,9 @@ webrtc 用到 navigator.mediaDevices 抓取屏幕流，主要是在chrome中调�
 ## canvas截图
 
 ```js
+<video id="remoteVideo" style="width= 100%; height=100%; object-fit: fill" autoplay muted playsinline></video>
+<canvas id="remote-canvas"> </canvas>
+
 function videoCut($video, $canvas, imgBase64) {
   // 截图
   $canvas
@@ -34,6 +37,6 @@ function videoCutFrame() {
 ## 定时器设置与移除
 
 ```js
-  let listenerPair = setInterval(() => {},3000)
-  clearInterval(listenerPair);
+  设定 let listenerPair = setInterval(() => {},3000)
+  移除 clearInterval(listenerPair);
 ```
