@@ -20,8 +20,9 @@ info Visit https://yarnpkg.com/en/docs/cli/add for documentation about this comm
 
 ## 错误原因及解决
 
-  -.node版本不兼容导致,可以升降node版本解决
-  -.不升降版本解决方案
+-.node版本不兼容导致,可以升降node版本解决
+
+-.不升降版本解决方案
 
   ```js
   //  --use-npm 强制使用npm
