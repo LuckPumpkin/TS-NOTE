@@ -4,11 +4,14 @@
  * @Author: yanan.zhao
  * @Date: 2019-12-05 16:49:39
  * @LastEditors: yanan.zhao
- * @LastEditTime: 2019-12-05 16:57:07
+ * @LastEditTime: 2020-05-21 11:25:52
  -->
 # axios请求返回图片流 转换成图片 并将返回头作为参数传给后端
 
-1.
+```html
+<img :src="codesrc" @click="getImgCode" class='br_img'>
+```
+#### 实现方法
 ```js
 async getImgCode(){
     this.codesrc = `/code?code=${new Date()}`
@@ -21,13 +24,15 @@ async getImgCode(){
 
 2.
 ```js 
-const res = await axios.get(`/code?code=${new Date()}`, {
-    responseType: "arraybuffer"
-})
-    const { headers: { randomstr = '' } } = res
-    this.codesrc = 'data:image/png;base64,' + btoa(new Uint8Array(res.data).reduce((data, byte) => {
-    return data + String.fromCharCode(byte)
-}, ''))
+async getImgCode() {
+	const res = await axios.get(`/code?code=${new Date()}`, {
+	    responseType: "arraybuffer"
+	})
+	const { headers: { randomstr = '' } } = res
+	this.codesrc = 'data:image/png;base64,' + btoa(new Uint8Array(res.data).reduce((data, byte) => {   // btoa创建一个base-64编码的字符串
+		return data + String.fromCharCode(byte)   // fromCharCode 可接受一个指定的Unicode,然后返回一个字符串
+	}, ''))
+}
 ```
 
 3.
