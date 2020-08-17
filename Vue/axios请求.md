@@ -4,7 +4,7 @@
  * @Author: yanan.zhao
  * @Date: 2019-12-05 16:49:39
  * @LastEditors: yanan.zhao
- * @LastEditTime: 2020-05-21 11:25:52
+ * @LastEditTime: 2020-08-17 11:02:12
  -->
 # axios请求返回图片流 转换成图片 并将返回头作为参数传给后端
 
